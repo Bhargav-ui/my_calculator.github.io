@@ -1,0 +1,121 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            calculater
+        </title>
+        <link rel="stylesheet" href="style.css">
+       
+    </head>
+    <body>
+        <div class="file">
+        <div class="bg"></div>
+        <div class="container"></div>
+        
+        <form name="form">
+        <input class="textview" name="textview">
+        </form>
+
+        <table>
+            <tr>
+                <td><input class="button" type="button" value="C" onclick="clr()"></td>
+                <td><input class="button" type="button" value="<=" onclick="backspace()"></td>
+                <td><input class="operator" type="button" value="/" onclick="fn2('/')"></td>
+                <td><input class="operator" type="button" value="*" onclick="fn2('*')"></td>
+            </tr>
+            <tr>
+                <td><input class="button" type="button" value="7" onclick="fn1(7)"></td>
+                <td><input class="button" type="button" value="8" onclick="fn1(8)"></td>
+                <td><input class="button" type="button" value="9" onclick="fn1(9)"></td>
+                <td><input class="operator" type="button" value="-" onclick="fn2('-')"></td>
+            </tr>
+            <tr>
+                <td><input class="button" type="button" value="4" onclick="fn1(4)"></td>
+                <td><input class="button" type="button" value="5" onclick="fn1(5)"></td>
+                <td><input class="button" type="button" value="6" onclick="fn1(6)"></td>
+                <td><input class="operator" type="button" value="+" onclick="fn2('+')"></td>
+            </tr>
+            <tr>
+                <td><input class="button" type="button" value="1" onclick="fn1(1)"></td>
+                <td><input class="button" type="button" value="2" onclick="fn1(2)"></td>
+                <td><input class="button" type="button" value="3" onclick="fn1(3)"></td>
+                <td rowspan=2><input class="button" type="button" style="height: 110px" value="=" onclick="equal()"></td>
+            </tr>
+            <tr>
+                <td ><input class="button" type="button" value="0" onclick="fn1(0)"></td>
+                <td ><input class="operator" type="button" value="." onclick="fn3('.')"></td>
+                <td><input class="operator" type="button" value="%" onclick="fn2('%')"></td>
+            </tr>
+        </table>
+        </div>
+
+        <script >
+
+
+
+     function fn1(num)
+    {
+    // document.getElementById("num").innerHTML=document.getElementById("num").innerHTML+num;
+      document.form.textview.value=document.form.textview.value+num    
+    }
+
+    function equal()
+    {
+        var total=document.form.textview.value;
+        if(total)
+        {
+        document.form.textview.value = eval(total)
+        }
+    }
+
+    function clr()
+    {
+        document.form.textview.value="";
+    }
+
+    function backspace()
+    {
+        var total=document.form.textview.value;
+        document.form.textview.value = total.substring(0,total.length-1);
+    }
+
+    function fn2(num)
+    {
+        var str=document.form.textview.value;
+        var res = str.charAt(str.length-1);
+                
+        if(res === ('+') || res === ('-') || res === ('*') || res === ('/') || res ===('%'))
+            {
+                document.form.textview.value=document.form.textview.value.slice(0,-1)+ num
+            }
+        else
+            {
+                document.form.textview.value=document.form.textview.value+num    
+            }
+    }
+
+    function fn3(num)
+    {
+        var str=document.form.textview.value;
+        var res = str.charAt(str.length-1);
+        var cnt=0;
+        if(res != '.')
+            {
+            //
+                document.form.textview.value=document.form.textview.value+num    
+            }
+        else
+            {
+            return;
+            }
+    }
+                    
+
+
+
+        </script>
+    </body>
+
+    
+</html>

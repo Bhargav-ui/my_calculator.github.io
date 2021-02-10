@@ -1,0 +1,70 @@
+ 
+*{
+    padding: 0;
+    margin: 0;
+}
+
+ body
+{
+    /*background-color: rgb(128, 0, 0); */
+     /*background: linear-gradient(-70deg, #fa7c30 30%, rgba(0, 0, 0, 0) 30%), url('planets.jpg'); */
+background: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c);
+    
+}
+    
+.file
+{
+ /*border: 2px solid red; */
+        margin: 5px;
+        padding: 15px;
+        border-radius: 10px;
+        position:absolute;
+        top:50%;
+        left:50%;
+        transform: translateX(-50%) translateY(-50%);
+        background-color: rgba(55, 55, 55, 1);
+}
+            
+
+input[type=button]
+{
+        padding: 5px;
+        margin: 5px;
+        font-size: 20px;
+        width: 50px;
+        height: 50px;
+        border-radius: 40px;
+        /* border:none; */
+        outline: none;
+}
+
+input[type=button]:hover
+{
+        font-size:40px;
+        background-color: chartreuse;
+        color:rgb(207, 22, 47);
+        text-shadow: rgba(55, 55, 55, 1);
+}
+
+.textview
+ {
+        width: 250px;
+        height: 50px;
+        background-color: red;
+        color: black;
+        /* border:none; */
+        outline: none;
+        text-align: right;
+        font-size: 30px;
+        color: white;
+        border-radius: 10px;
+
+}
+
+
+/* 
+        .bg{
+            background: linear-gradient(to right,red,blue);
+            height: 100%;
+        } */
+        
